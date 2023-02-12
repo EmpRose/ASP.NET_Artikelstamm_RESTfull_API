@@ -2,7 +2,8 @@
 //To do:
 
 // Sprache wird unabhängig von [DevaultValue(0)] bzw "Deutsch" auf null gesetzt. Fehlt Routing oder DI?
-// Flag "Freigegeben" bei Befüllung aller "notwendigen" Felder. <= in XAML "IsVisible = true" , welche Ausgabe soll hier erfolgen und auf welche Weise?
+// => Das Resultat daraus : Artikel.IstFertig bleibt bei "false" da "Sprache" als "null" gesetzt wird
+
 
 
 
@@ -40,5 +41,9 @@
 // => als separate Methode die aufgerufen wird (Wo will ich sie hinterlegen? =))    <= Beim Post und Udpate
 // => Liste von Worten erzeugen                                                     <= Als Eigene Klasse
 // => Hinzufügen über Dependency Injection über Program.cs
+
+// Methode "ArtikelIstReadyToGo
+// Erstellt, Test wird jedoch nicht ausgeführt, da Sprache den [DevaultValue(0)] nicht übernimmt.
+// Es fehlt ein Routing und dann sollte es gehen!
 
 
