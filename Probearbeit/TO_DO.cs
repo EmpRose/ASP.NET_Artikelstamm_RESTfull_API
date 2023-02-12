@@ -26,9 +26,9 @@
 // => Get,      Check
 // => Put,      Check
 // => Delete    Check
-// => GetFilter Check (Nicht eigenständig erstellt <= übernommen und angepasst)
-// => GetByTimeStamp  (Nicht eigenständig erstellt <= übernommen und angepasst)
-// => GetTitel  Check (Nicht eigenständig erstellt <= übernommen und angepasst)
+// => GetFilter Check (Nicht komplett eigenständig erstellt <= übernommen und angepasst)
+// => GetByTimeStamp  (Nicht komplett eigenständig erstellt <= übernommen und angepasst)
+// => GetTitel  Check (Nicht komplett eigenständig erstellt <= übernommen und angepasst)
 // => Testen (Ok!)
 
 
