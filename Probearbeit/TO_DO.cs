@@ -2,7 +2,7 @@
 //To do:
 
 // Sprache wird unabhängig von [DevaultValue(0)] bzw "Deutsch" auf null gesetzt. Fehlt Routing oder DI?
-
+// Flag "Freigegeben" bei Befüllung aller "notwendigen" Felder. <= in XAML "IsVisible = true" , welche Ausgabe soll hier erfolgen und auf welche Weise?
 
 
 
