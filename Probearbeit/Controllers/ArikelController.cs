@@ -31,6 +31,14 @@ namespace Probearbeit.Controllers
             {
                 return BadRequest("Artikel enthält verbotenes Wort");
             }
+            if (artikel.Id != null && 
+                artikel.Sprache != null && 
+                artikel.Farbe != null && 
+                artikel.ArtikelErstellt != null &&
+                artikel.Sperrgut != null)
+            {
+                artikel.istFertig = true;
+            }
             
             _db.Artikels.Add(artikel);
             _db.SaveChanges();
