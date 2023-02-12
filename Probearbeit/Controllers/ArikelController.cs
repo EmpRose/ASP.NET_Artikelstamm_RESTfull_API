@@ -50,14 +50,16 @@ namespace Probearbeit.Controllers
             }
             return Ok(artikelFromDb);
         }
-
-        // GetAllArtikel
-        [HttpGet]
-        public IActionResult GetAllArtikel()
+        
+        //GetByDateFromTo 
+        [HttpGet("{start}/{ende}")]
+        public IActionResult ZeitFilter(DateTime start, DateTime ende) 
         {
-            return Ok(_db.Artikels.ToList());
+            var filteredArtikel = _db.Artikels.Where(a => a.ArtikelErstellt >= start && a.ArtikelErstellt <= ende).ToList();
+            return Ok(filteredArtikel);
         }
 
+        //GetArtikelByTitle
         [HttpGet("TitelSuche")]
         public ActionResult<IEnumerable<Artikel>> TitelSuche(string titel)
         {
@@ -69,6 +71,13 @@ namespace Probearbeit.Controllers
             }
 
             return Ok(artikel);
+        }
+        
+        // GetAllArtikel
+        [HttpGet]
+        public IActionResult GetAllArtikel()
+        {
+            return Ok(_db.Artikels.ToList());
         }
 
         // UpdateArtikel
@@ -88,15 +97,7 @@ namespace Probearbeit.Controllers
             return Ok("Artikel erfolgreich verändert.");
         }
 
-        //GetByDate 
-        [HttpGet("{start}/{ende}")]
-        public IActionResult ZeitFilter(DateTime start, DateTime ende) 
-        {
-            var filteredArtikel = _db.Artikels.Where(a => a.ArtikelErstellt >= start && a.ArtikelErstellt <= ende).ToList();
-            return Ok(filteredArtikel);
-        }
-
-        // DeleteArtikel
+        // DeleteArtikelById
         [HttpDelete("{id}")]
         public IActionResult DeleteArtikel(int id)
         {
