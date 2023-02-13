@@ -26,18 +26,16 @@ namespace Probearbeit.Controllers
         [HttpPost]
         public IActionResult CreateArtikel(Artikel artikel)
         {
-
-            if (_verboteneWorte.IstVerbotenesWortEnthalten(artikel))
-            {
-                return BadRequest("Artikel enthält verbotenes Wort");
-            }
-            if (artikel.Id != null && 
-                artikel.Sprache != null && 
+            if (artikel.Sprache != null && 
                 artikel.Farbe != null && 
                 artikel.ArtikelErstellt != null &&
                 artikel.Sperrgut != null)
             {
                 artikel.istFertig = true;
+            }
+            if (_verboteneWorte.IstVerbotenesWortEnthalten(artikel))
+            {
+                return BadRequest("Artikel enthält verbotenes Wort");
             }
             
             _db.Artikels.Add(artikel);
@@ -96,6 +94,15 @@ namespace Probearbeit.Controllers
             {
                 return NotFound("Fehler: Artikel wurde nicht gefunden");
             }*/
+          //Artikel artikelFromDb = _db.Artikels.SingleOrDefault(a => a.Id == id);
+            if (artikel.Id != null && 
+                artikel.Sprache != null && 
+                artikel.Farbe != null && 
+                artikel.ArtikelErstellt != null &&
+                artikel.Sperrgut != null)
+            {
+                artikel.istFertig = true;
+            }
             if (_verboteneWorte.IstVerbotenesWortEnthalten(artikel))
             {
                 return BadRequest("Artikel enthält verbotenes Wort");
@@ -109,7 +116,7 @@ namespace Probearbeit.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteArtikel(int id)
         {
-            Artikel artikelFromDb = _db.Artikels.SingleOrDefault(a => a.Id == id); ;
+            Artikel artikelFromDb = _db.Artikels.SingleOrDefault(a => a.Id == id);
             if (artikelFromDb == null)
             {
                 return NotFound("Fehler: Artikel wurde nicht gefunden");
