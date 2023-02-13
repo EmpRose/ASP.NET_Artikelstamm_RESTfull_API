@@ -1,10 +1,14 @@
 ﻿
 //To do:
 
+// Funktion
 // Sprache wird unabhängig von [DevaultValue(0)] bzw "Deutsch" auf null gesetzt. Fehlt Routing oder DI?
 // => Das Resultat daraus : Artikel.IstFertig bleibt bei "false" da "Sprache" als "null" gesetzt wird
 
-
+// Refactoring
+// listen von Klassen aller Auswahloptionen (Farbe, SpracheKontext etc) anlegen => interfaces erzeugen, Artikel realisiert alle interfaces
+// Dependency Injection Artikel das alle Interfaces realisiert
+// IstFertig => als methode implementieren und bei Post und Put einsetzen. Eventuell alls Async/Await Task
 
 
 
@@ -19,7 +23,7 @@
 
 // Datenbank
 // DbSet erzeugen für Artikel"s" (InMemory => Für GitHub) (Microsoft.EntityFrameworkCore)
-// DbSet in "Program.cs" Klasse hinterlegen
+// DbSet in "Program.cs" Klasse hinterlegen // Dependency Injection
 // Routing im Controller
 
 // HttpRequests
@@ -40,9 +44,9 @@
 // Methode - VerboteneWorte
 // => als separate Methode die aufgerufen wird (Wo will ich sie hinterlegen? =))    <= Beim Post und Udpate
 // => Liste von Worten erzeugen                                                     <= Als Eigene Klasse
-// => Hinzufügen über Dependency Injection über Program.cs
+// => Hinzufügen über als Service über Dependency Injection in Program.cs
 
-// Methode "ArtikelIstReadyToGo
+// Methode "ArtikelIstReadyToGo (IstFertig : bool)
 // Erstellt, Test wird jedoch nicht ausgeführt, da Sprache den [DevaultValue(0)] nicht übernimmt.
 // Es fehlt ein Routing und dann sollte es gehen!
 
