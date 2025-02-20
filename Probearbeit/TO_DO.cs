@@ -8,7 +8,7 @@
 // Refactoring
 // listen von Klassen aller Auswahloptionen (Farbe, SpracheKontext etc) anlegen => interfaces erzeugen, Artikel realisiert alle interfaces
 // Dependency Injection Artikel das alle Interfaces realisiert
-// IstFertig => als methode implementieren und bei Post und Put einsetzen. Eventuell alls Async/Await Task
+// IstFertig => als methode implementieren und bei Post und Put einsetzen. 
 
 
 
@@ -44,10 +44,4 @@
 // Methode - VerboteneWorte
 // => als separate Methode die aufgerufen wird (Wo will ich sie hinterlegen? =))    <= Beim Post und Udpate
 // => Liste von Worten erzeugen                                                     <= Als Eigene Klasse
-// => Hinzufügen über als Service über Dependency Injection in Program.cs
-
-// Methode "ArtikelIstReadyToGo (IstFertig : bool)
-// Erstellt, Test wird jedoch nicht ausgeführt, da Sprache den [DevaultValue(0)] nicht übernimmt.
-// Es fehlt ein Routing und dann sollte es gehen!
-
 
